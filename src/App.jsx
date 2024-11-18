@@ -1,14 +1,13 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import ClientLayout from "./components/client/ClientLayout";
 import Home from "./pages/client/Home";
 import Items from "./pages/client/Items";
 
 const App = () => {
-  const navigate = useNavigate();
   const location = useLocation();
 
   if (location.pathname == "/") {
-    navigate("/categories");
+    return <Navigate to={"/categories"}/>
   }
   
   return (
