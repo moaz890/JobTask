@@ -28,6 +28,7 @@ const cartSlice = createSlice({
         .addCase(addToCart.fulfilled, (state, action) => {
             state.isLoading = false;
             state.count = action.payload.data.count
+            state.price = action.payload.data.price
             localStorage.setItem("count", action.payload.data.count);
             localStorage.setItem("price", action.payload.data.price);
         })
